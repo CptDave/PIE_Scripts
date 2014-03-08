@@ -1,0 +1,29 @@
+﻿//MineCraft GlovePie Script for use with 360 Controller
+
+var.MouseSensitivity = screen.width/300
+
+//movement
+
+Key.W = (XInput.LeftStickY > .5)
+Key.S = (XInput.LeftStickY < -.5)
+Key.D = (XInput.LeftStickX > .5)
+Key.A = (XInput.LeftStickX < -.5)
+
+
+if (XInput.RightStickY > .4) mouse.DirectInputY -= var.MouseSensitivity^(XInput.RightStickY) ;
+if (XInput.RightStickY < -.4) mouse.DirectInputY += -var.MouseSensitivity^1*(XInput.RightStickY) ;
+if (XInput.RightStickX > .4) mouse.DirectInputX += var.MouseSensitivity^(XInput.RightStickX)     ;
+if (XInput.RightStickX < -.4) mouse.DirectInputX -= -var.MouseSensitivity^1*(XInput.RightStickX) ;
+
+
+Mouse.LeftButton = XInput.RightTrigger;
+Mouse.RightButton = XInput.LeftTrigger;
+
+Key.Space = XInput.A;
+Key.Escape = XInput.Start;
+Key.BackSpace = XInput.B;
+Key.E = XInput.Back;
+
+Mouse.WheelDown = XInput.Right;
+Mouse.WheelUp = XInput.Left
+
