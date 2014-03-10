@@ -1,0 +1,35 @@
+﻿//Battlefield: Bad Company 2 PIE Scripts for use with 360 controller
+
+var.MouseSensitivity = screen.width/300;
+
+//movement
+
+Key.W = (XInput.LeftStickY > .5)
+Key.S = (XInput.LeftStickY < -.5)
+Key.D = (XInput.LeftStickX > .5)
+Key.A = (XInput.LeftStickX < -.5)
+
+
+if (XInput.RightStickY > .4) mouse.DirectInputY -= var.MouseSensitivity^(XInput.RightStickY) ;
+if (XInput.RightStickY < -.4) mouse.DirectInputY += -var.MouseSensitivity^1*(XInput.RightStickY) ;
+if (XInput.RightStickX > .4) mouse.DirectInputX += var.MouseSensitivity^(XInput.RightStickX)     ;
+if (XInput.RightStickX < -.4) mouse.DirectInputX -= -var.MouseSensitivity^1*(XInput.RightStickX) ;
+
+
+
+Key.Space = XInput.A;    //jump
+Key.E = XInput.B;         //i/o vehicle
+Key.R = XInput.X;          //reload
+Key.Tab = XInput.Back;     //score
+Key.Escape = XInput.Start;   //exit
+Key.Ctrl = XInput.Y;
+Key.F = XInput.LeftShoulder;
+Key.Shift = XInput.LeftThumb;
+
+Mouse.WheelDown = XInput.Down;
+Mouse.WheelUp = XInput.Up;
+Mouse.LeftButton = XInput.RightTrigger;
+Mouse.RightButton = XInput.LeftTrigger;
+Mouse.MiddleButton = XInput.RightShoulder;
+
+Mouse.IsDragging = true;
